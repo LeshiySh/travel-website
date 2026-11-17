@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>На Высоте - Гранд-туры и экскурсии</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+     <header class="header">
+        <div class="container header-block">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                <div class="logo-text">
+                    <p class="logo-title">На Высоте</p>
+                    <p class="logo-subtitle">ТУР - АГЕНТСТВО</p>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="{% url 'catalog' %}">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </nav>
+            <button class="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <hr class="header-line">
+    </header>
+
+    <main>
+        <section class="catalog-hero-section">
+            <div class="container">
+                <div class="catalog-hero-box" style="background-image: url('{% static 'img/catalog-preview.png' %}');">
+                    <div class="catalog-overlay">
+                        <h1>Поиск туров и экскурсий</h1>
+                        <form class="search-bar" method="get" action="{% url 'catalog' %}">
+                            <div class="search-input-wrap">
+                                <span class="search-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                                        <circle cx="10.5" cy="10.5" r="7.5" stroke="#051E1A" stroke-width="2.2"/>
+                                        <line x1="16.2" y1="16.2" x2="21" y2="21" stroke="#051E1A" stroke-width="2.2" stroke-linecap="round"/>
+                                    </svg>
+                                </span>
+                                <input type="text" name="q" value="{{ query }}" placeholder="Куда?">
+                            </div>
+                            <button type="button" class="filter-btn" aria-label="Фильтры">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                                    <line x1="3" y1="5" x2="21" y2="5" stroke="#051E1A" stroke-width="2.2" stroke-linecap="round"/>
+                                    <circle cx="15.5" cy="5" r="2.8" fill="#051E1A"/>
+                                    <line x1="3" y1="12" x2="21" y2="12" stroke="#051E1A" stroke-width="2.2" stroke-linecap="round"/>
+                                    <circle cx="7.5" cy="12" r="2.8" fill="#051E1A"/>
+                                    <line x1="3" y1="19" x2="21" y2="19" stroke="#051E1A" stroke-width="2.2" stroke-linecap="round"/>
+                                    <circle cx="13" cy="19" r="2.8" fill="#051E1A"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="catalog-grid">
+                {% for tour in tours %}
+                <div class="tour-card">
+                    <div class="tour-img-wrap">
+                        <img src="{% static tour.image %}" alt="{{ tour.title }}">
+                        <button class="fav-btn" aria-label="В избранное">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                                <path d="M12 20.5C12 20.5 3.5 14.8 3.5 8.5C3.5 5.8 5.6 3.8 8.2 3.8C9.8 3.8 11.2 4.6 12 5.8C12.8 4.6 14.2 3.8 15.8 3.8C18.4 3.8 20.5 5.8 20.5 8.5C20.5 14.8 12 20.5 12 20.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="tour-body">
+                        <h3>{{ tour.title }}</h3>
+                        <p class="tour-desc">{{ tour.description }}</p>
+                        <div class="tour-meta">
+                            <span class="tour-price">{{ tour.price }} баллов</span>
+                            <span class="tour-days" data-days="{{ tour.days }}">/ {{ tour.days }} дней</span>
+                        </div>
+                        <span class="tour-dates">{{ tour.dates }}</span>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Туры пока не добавлены.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                    <div class="logo-text">
+                        <span class="logo-title">На Высоте</span>
+                        <span class="logo-subtitle">ТУР - АГЕНТСТВО</span>
+                    </div>
+                </a>
+                <p class="footer-desc">Мы создаём путешествия, которые вдохновляют и меняют жизнь.</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЕНЮ</h4>
+                <a href="#">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </div>
+
+            <div class="footer-info">
+                <h4>КОНТАКТЫ</h4>
+                <p>8 (888) 999-73-73</p>
+                <p>pyt@yandex.ru</p>
+                <p>г. Ульяновск, ул. Большой <br> Путь, 28, офис 7</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЫ В СОЦСЕТЯХ</h4>
+                <div class="socials">
+                    <a href="#"><img src="{% static 'img/tg.png' %}" alt="Telegram"></a>
+                    <a href="#"><img src="{% static 'img/vk.png' %}" alt="VK"></a>
+                    <a href="#"><img src="{% static 'img/max.png' %}" alt="MAX"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/burger-menu.js' %}"></script>
+    <script src="{% static 'js/catalog.js' %}"></script>
+
+</body>
+</html>

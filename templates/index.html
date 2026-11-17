@@ -11,7 +11,7 @@
 
     <header class="header">
         <div class="container header-block">
-            <a href="#" class="logo">
+            <a href="{% url 'index' %}" class="logo">
                 <img src="{% static 'img/logo.png' %}" alt="На Высоте">
                 <div class="logo-text">
                     <p class="logo-title">На Высоте</p>
@@ -19,7 +19,7 @@
                 </div>
             </a>
             <nav class="nav">
-                <a href="#">Каталог</a>
+                <a href="{% url 'catalog' %}">Каталог</a>
                 <a href="#">Профиль</a>
                 <a href="#">Вход</a>
                 <a href="#">Регистрация</a>
@@ -214,7 +214,7 @@
                 <h4>КОНТАКТЫ</h4>
                 <p>8 (888) 999-73-73</p>
                 <p>pyt@yandex.ru</p>
-                <p>г. Ульяновск, ул. Большой Путь, 28, офис 7</p>
+                <p>г. Ульяновск, ул. Большой <br> Путь, 28, офис 7</p>
             </div>
 
             <div class="footer-info">
@@ -228,30 +228,7 @@
         </div>
     </footer>
 
-
-    <script>
-        const burger = document.querySelector('.burger-btn');
-        const nav = document.querySelector('.nav');
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            burger.classList.toggle('active');
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                burger.classList.remove('active');
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !burger.contains(e.target)) {
-                nav.classList.remove('active');
-                burger.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="{% static 'js/burger-menu.js' %}"></script>
     
 </body>
 </html>
