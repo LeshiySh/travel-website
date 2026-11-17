@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>На Высоте - Гранд-туры и экскурсии</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-block">
+            <a href="#" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                <div class="logo-text">
+                    <p class="logo-title">На Высоте</p>
+                    <p class="logo-subtitle">ТУР - АГЕНТСТВО</p>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="#">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </nav>
+            <button class="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <hr class="header-line">
+    </header>
+
+    <main>
+        <section class="preview" style="background-image: url('{% static 'img/preview.png' %}');">
+            <div class="overlay">
+                <div class="preview-content container">
+                    <h1>ГРАНД-ТУР И ЭКСКУРСИИ<br>ОСУЩЕСТВИТЕ СВОЮ МЕЧТУ</h1>
+                    <p>Мы создаем туры и экскурсии, которые позволяют увидеть мир без лишних хлопот. <br> Организуем ваш идеальный отдых: <br> от трансфера и отелей до насыщенной программы с лучшими гидами.</p>
+                    <a href="" class="preview-btn">ПОДРОБНЕЕ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="tours">
+            <div class="section-header">
+                <div>
+                    <p class="subtitle">ПОПУЛЯРНЫЕ НАПРАВЛЕНИЯ</p>
+                    <h2>Куда хотите отправиться?</h2>
+                </div>
+                <div class="slider-arrows">
+                    <button class="arrow-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"> </line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <button class="arrow-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="{% static 'img/maincard1.png' %}" alt="Мальдивы">
+                    <div class="card-info">
+                        <h3>Мальдивы</h3>
+                        <p>от 100 баллов</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/maincard2.png' %}" alt="Турция">
+                    <div class="card-info">
+                        <h3>Турция</h3>
+                        <p>от 95 баллов</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/maincard3.png' %}" alt="Швейцария">
+                    <div class="card-info">
+                        <h3>Швейцария</h3>
+                        <p>от 100 баллов</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/maincard4.png' %}" alt="Япония">
+                    <div class="card-info">
+                        <h3>Япония</h3>
+                        <p>от 3000 баллов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section advantages">
+            <div class="container">
+                <span class="subtitle">НАШИ ПРЕИМУЩЕСТВА</span>
+                <h2>Путешествуйте с уверенностью</h2>
+
+                <div class="advantages-grid">
+                    <div class="advantages-item">
+                        <img src="{% static 'img/advantages4.svg' %}" alt="Большой выбор">
+                        <h3>Большой выбор</h3>
+                        <p>Туры в более чем 100 стран <br> мира на любой вкус</p>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="{% static 'img/advantages3.svg' %}" alt="Лучшие цены">
+                        <h3>Лучшие цены</h3>
+                        <p>Работаем напрямую <br>  с туроператорами</p>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="{% static 'img/advantages1.svg' %}" alt="Забота 24/7">
+                        <h3>Забота 24/7</h3>
+                        <p>Поддержка на всех этапах <br>  путешествия</p>
+                    </div>
+                    <div class="advantages-item">
+                        <img src="{% static 'img/advantages2.svg' %}" alt="Надежность">
+                        <h3>Надежность</h3>
+                        <p>Гарантия качества <br>  и безопасности</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container ideal-trip">
+            <div class="ideal-left">
+                <p class="subtitle">ТУРЫ НА ЛЮБОЙ СЛУЧАЙ</p>
+                <h2>Ваше идеальное<br>путешествие</h2>
+                <ul class="trip-list">
+                    <li>
+                        <img src="{% static 'img/checkbox.svg' %}" alt="">
+                        <p>Пляжный отдых</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'img/checkbox.svg' %}" alt="">
+                        <p>Экскурсионные туры</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'img/checkbox.svg' %}" alt="">
+                        <p>Приключения и активный отдых</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'img/checkbox.svg' %}" alt="">
+                        <p>Романтические путешествия</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'img/checkbox.svg' %}" alt="">
+                        <p>Семейный отдых</p>
+                    </li>
+                </ul>
+                <a href="#" class="btn-trip">Смотреть все туры</a>
+            </div>
+
+            <div class="ideal-collage">
+                <img src="{% static 'img/photocollage1.png' %}" alt="Пляж" class="img-tall">
+                <div class="collage-middle">
+                    <img src="{% static 'img/photocollage2.png' %}" alt="Горы">
+                    <img src="{% static 'img/photocollage3.png' %}" alt="Океан">
+                </div>
+                <img src="{% static 'img/photocollage4.png' %}" alt="Город" class="img-tall">
+            </div>
+        </section>
+
+        <section class="section selection" style="background-image: url('{% static 'img/requestpreview.png' %}');">
+            <div class="container selection-container">
+                <div class="selection-text">
+                    <span class="subtitle">ГОТОВЫ К НОВЫМ ОТКРЫТИЯМ?</span>
+                    <h2>Отправляемся в новое<br>путешествие!</h2>
+                    <p>Оставьте заявку и мы подберем путешествие, которое станет вашим лучшим воспоминанием.</p>
+                </div>
+
+                <form class="selection-form" method="post">
+                    {% csrf_token %}
+                    <h3>Подберите тур мечты</h3>
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <input type="text" class="fake-select" value="Куда хотите отправиться?" readonly>
+                    <button type="submit" class="btn-trip full-width">Подобрать тур</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                    <div class="logo-text">
+                        <span class="logo-title">На Высоте</span>
+                        <span class="logo-subtitle">ТУР - АГЕНТСТВО</span>
+                    </div>
+                </a>
+                <p class="footer-desc">Мы создаём путешествия, которые вдохновляют и меняют жизнь.</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЕНЮ</h4>
+                <a href="#">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </div>
+
+            <div class="footer-info">
+                <h4>КОНТАКТЫ</h4>
+                <p>8 (888) 999-73-73</p>
+                <p>pyt@yandex.ru</p>
+                <p>г. Ульяновск, ул. Большой Путь, 28, офис 7</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЫ В СОЦСЕТЯХ</h4>
+                <div class="socials">
+                    <a href="#"><img src="{% static 'img/tg.png' %}" alt="Telegram"></a>
+                    <a href="#"><img src="{% static 'img/vk.png' %}" alt="VK"></a>
+                    <a href="#"><img src="{% static 'img/max.png' %}" alt="MAX"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const burger = document.querySelector('.burger-btn');
+        const nav = document.querySelector('.nav');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !burger.contains(e.target)) {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            }
+        });
+    </script>
+    
+</body>
+</html>

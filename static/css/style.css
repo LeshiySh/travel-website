@@ -1,0 +1,1067 @@
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Serif-Bold';
+    src: url('../fonts/SourceSerif4_48pt-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-SemiBold';
+    src: url('../fonts/Roboto-SemiBold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #010F10;
+    color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 170px;
+}
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.subtitle {
+    display: block;
+    font-size: 18px;
+    color: #CFAA76;
+    text-transform: uppercase;
+    font-family: Montserrat-SemiBold;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: Serif-Bold;
+    color: #DDEBDC;
+}
+
+.preview-btn {
+    display: inline-block;
+    padding: 12px 45px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    font-family: Montserrat-SemiBold;
+    border-radius: 10px;
+}
+
+.preview-btn:hover {
+    background-color: #CFAA76;
+    color: #051E1A;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.preview {
+    background-size: cover;
+    background-position: center;
+    min-height: 900px;
+}
+
+.preview .overlay {
+    margin-top: -85px;
+    background: linear-gradient(180deg, #010f1000 600px, #010F10 100%);
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 120px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.header-line {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.548);
+    width: 85%;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-family: Montserrat-SemiBold;
+    color: #DDEBDC;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo-subtitle {
+    font-size: 10px;
+    margin-top: 2px;
+    font-family: Montserrat-Medium;
+    letter-spacing: 1.5px;
+    color: #DDEBDC;
+}
+
+.nav {
+    display: flex;
+    gap: 35px;
+}
+
+.nav a {
+    color: #DDEBDC;
+    font-family: Montserrat-SemiBold;
+    font-size: 17px;
+}
+
+.nav a:hover {
+    color: #CFAA76;
+}
+
+.preview-content {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.preview-content h1 {
+    font-size: 52px;
+    margin: 45px 0 30px 0;
+    font-family: Montserrat-Bold;
+}
+
+.preview-content p {
+    max-width: 1050px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: Montserrat-SemiBold;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.slider-arrows {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1.5px solid #DDEBDC;
+    background: none;
+    color: #DDEBDC;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.arrow-btn:hover {
+    color: #010F10;
+    border-color: #010F10;
+    background-color: #CFAA76;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4.2;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.card-info h3 {
+    font-size: 24px;
+    margin-bottom: 4px;
+    font-family: Montserrat-SemiBold;
+}
+
+.card-info p {
+    font-size: 20px;
+    font-family: Montserrat-Regular;
+}
+
+
+.advantages {
+    background-color: #051E1A;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.advantages-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.advantages-item h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: Roboto-SemiBold;
+}
+
+.advantages-item p {
+    font-size: 18px;
+    font-family: Roboto-Regular;
+}
+
+.ideal-trip {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.trip-list {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.trip-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Montserrat-Medium;
+}
+
+.trip-list li img {
+    width: 35px;  
+    height: 35px;
+    flex-shrink: 0;
+}
+
+.btn-trip {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #DDEBDC;
+    color: #041D19;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: Montserrat-SemiBold;
+    font-size: 20px;
+}
+
+.btn-trip:hover {
+    background-color: #CFAA76;
+}
+
+.ideal-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    height: 520px;
+}
+
+.ideal-collage > img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.collage-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    min-height: 0;
+}
+
+.collage-middle img {
+    width: 100%;
+    height: calc(50% - 7.5px);
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.selection {
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.selection-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.selection-text h2 {
+    margin-bottom: 20px;
+}
+
+.selection-text p {
+    color: #DDEBDC;
+    max-width: 460px;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+}
+
+.selection-form {
+    width: 100%;
+    max-width: 580px;
+    justify-self: end;
+    background: rgba(1, 15, 16, 0.8);
+    backdrop-filter: blur(6px);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.selection-form h3 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-family: Montserrat-SemiBold;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.selection-form input {
+    width: 100%;
+    padding: 15px 18px;
+    background: transparent;
+    border: 1px solid rgba(221, 235, 220, 0.5);
+    border-radius: 8px;
+    color: #B2B2B2;
+    font-size: 15px;
+    outline: none;
+}
+
+.selection-form input::placeholder {
+    color: #B2B2B2;
+}
+
+.selection-form .fake-select {
+    margin-bottom: 24px;
+    background-position: right 18px center;
+    background-size: 16px;
+}
+
+
+.footer {
+    padding: 50px 0;
+    background-color: #041D19;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.3fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    max-width: 220px;
+    color: #DDEBDC;
+    font-family: Montserrat-Medium;
+    font-size: 14px;
+}
+
+.footer-info h4 {
+    color: #CFAA76;
+    font-family: Montserrat-Bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-info a,
+.footer-info p {
+    display: block;
+    color: #DDEBDC;
+    font-family: Montserrat-SemiBold;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-info a:hover {
+    color: #CFAA76;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.socials a {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background: none;
+    margin-bottom: 0;
+}
+
+.socials img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #DDEBDC;
+    border-radius: 2px;
+}
+
+
+@media (min-width: 2000px) {
+
+    .container {
+        max-width: 2200px;
+    }
+
+    .header-line {
+        max-width: 2050px;
+    }
+
+    .header-block {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .logo-title {
+        font-size: 24px;
+    }
+
+    .logo-subtitle {
+        font-size: 16px;
+    }
+
+    .nav a {
+        font-size: 24px;
+    }
+
+    .preview-content h1 {
+        font-size: 64px;
+    }
+
+    .preview-content p {
+        max-width: 1300px;
+        font-size: 28px;
+    }
+
+    .preview {
+        min-height: 1080px;
+    }
+
+    .preview .overlay {
+        height: 1080px;
+    }
+
+    .preview-btn {
+        padding: 16px 52px;
+        font-size: 20px;
+    }
+
+    .card-info h3 {
+        font-size: 34px;
+    }
+
+    .card-info p {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+        padding: 0 100px;
+    }
+
+    .header-line {
+        width: calc(100% - 140px);
+    }
+
+    .header-block {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .preview-content h1 {
+        font-size: 42px;
+    }
+
+    .preview-content p {
+        font-size: 17px;
+    }
+
+    .preview-content {
+        margin-top: 150px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .cards-grid {
+        gap: 24px;
+    }
+
+    .arrow-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .advantages-item h3 {
+        font-size: 22px;
+    }
+
+    .ideal-collage {
+        height: 450px;
+    }
+
+    .section {
+        margin: 60px 0 0 0;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .btn-trip {
+        font-size: 16px;
+    }
+
+    .trip-list li img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .trip-list li {
+        font-size: 18px;
+        padding: 6px 0;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .header-line {
+        width: calc(100% - 80px);
+    }
+
+    .header-block {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .logo img {
+        height: 35px;
+    }   
+
+    .logo-title {
+        font-size: 16px;
+    }
+
+    .logo-subtitle {
+        font-size: 8px;
+    }
+
+    .preview,
+    .preview .overlay {
+        min-height: 600px;
+        height: 600px;
+    }
+
+    .preview-content h1 {
+        font-size: 32px;
+    }
+
+    .preview-content p {
+        font-size: 14px;
+    }
+
+    .preview-btn {
+        padding: 12px 35px;
+        font-size: 12px;
+    }
+
+    .preview-content {
+        margin-top: 175px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .section-header {
+        margin: 30px 0 0 0;
+    }
+
+    .cards-grid {
+        gap: 16px;
+    }
+
+    .card-info {
+        padding: 18px;
+    }
+
+    .card-info h3 {
+        font-size: 18px;
+    }
+
+    .card-info p {
+        font-size: 14px;
+    }
+
+    .advantages-item img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .advantages-item h3 {
+        font-size: 18px;
+    }
+
+    .advantages-item p {
+        font-size: 14px;
+    }
+
+    .ideal-trip {
+        grid-template-columns: 1fr 1.3fr;
+        gap: 24px;
+    }
+
+    .trip-list li {
+        font-size: 15px;
+        padding: 6px 0;
+    }
+
+    .trip-list li img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .btn-trip {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .ideal-collage {
+        height: 400px;
+        gap: 10px;
+    }
+
+    .selection {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .selection-container {
+        gap: 30px;
+    }
+
+    .selection-form {
+        padding: 28px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+        gap: 20px;
+    }
+
+    .selection-form h3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .header-block {
+        position: relative;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(1, 15, 16, 0.96);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .burger-btn {
+        display: flex;
+    }
+
+    .burger-btn span {
+        transition: 0.3s;
+    }
+
+    .burger-btn.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-btn.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .logo-subtitle {
+        font-size: 9px;
+    }
+
+    .logo-title {
+        font-size: 14px;
+    }
+
+    .preview-content h1 {
+        font-size: 20px;
+    }
+
+    .preview-content p {
+        font-size: 11px;
+    }
+
+    .header-line {
+        width: calc(100% - 40px);
+    }
+
+    .preview,
+    .preview .overlay {
+        min-height: 620px;
+        height: 620px;
+    }
+
+    .preview .overlay {
+        background: linear-gradient(180deg, #010f1000 320px, #010F10 100%);
+        padding-bottom: 60px;
+    }
+
+    .preview-content {
+        margin-top: 100px;
+    }
+
+    .preview-btn {
+        padding: 10px 30px;
+        font-size: 12px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 23px;
+        margin-bottom: 24px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .slider-arrows {
+        align-self: center;
+        margin-bottom: 25px;
+    }
+
+    .arrow-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card-info {
+        padding: 14px;
+    }
+
+    .card-info h3 {
+        font-size: 16px;
+    }
+
+    .card-info p {
+        font-size: 12px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .advantages-item img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .advantages-item h3 {
+        font-size: 20px;
+    }
+
+    .advantages-item p {
+        font-size: 14px;
+    }
+
+    .ideal-trip {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .trip-list li {
+        font-size: 15px;
+        padding: 7px 0;
+    }
+
+    .trip-list li img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .btn-trip {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+
+    .ideal-collage {
+        height: 260px;
+        gap: 8px;
+    }
+
+    .collage-middle {
+        gap: 8px;
+    }
+
+    .collage-middle img {
+        height: calc(50% - 4px);
+    }
+
+    .selection {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .selection-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .selection-text p {
+        font-size: 14px;
+    }
+
+    .selection-form {
+        padding: 24px 18px;
+        max-width: 100%;
+    }
+
+    .selection-form h3 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .selection-form input {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
