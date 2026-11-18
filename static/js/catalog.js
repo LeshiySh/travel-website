@@ -20,3 +20,10 @@ document.querySelectorAll('.tour-days').forEach(el => {
         el.textContent = `/ ${days} ${getDaysWord(days)}`;
     }
 });
+
+document.querySelectorAll('.tour-days-badge').forEach(el => {
+    const days = parseInt(el.dataset.days, 10);
+    if (!isNaN(days)) {
+        el.textContent = `${days} ${getDaysWord(days)}`;
+    }
+});

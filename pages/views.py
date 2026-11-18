@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Tour
 
 def index(request):
@@ -11,3 +11,7 @@ def catalog(request):
     else:
         tours = Tour.objects.all()
     return render(request, 'catalog.html', {'tours': tours, 'query': query})
+
+def tour_detail(request, tour_id):
+    tour = get_object_or_404(Tour, id=tour_id)
+    return render(request, 'tour_detail.html', {'tour': tour})

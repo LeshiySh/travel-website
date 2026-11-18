@@ -69,14 +69,16 @@
                 {% for tour in tours %}
                 <div class="tour-card">
                     <div class="tour-img-wrap">
-                        <img src="{% static tour.image %}" alt="{{ tour.title }}">
+                        <a href="{% url 'tour_detail' tour.id %}">
+                            <img src="{% static tour.image %}" alt="{{ tour.title }}">
+                        </a>
                         <button class="fav-btn" aria-label="В избранное">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
                                 <path d="M12 20.5C12 20.5 3.5 14.8 3.5 8.5C3.5 5.8 5.6 3.8 8.2 3.8C9.8 3.8 11.2 4.6 12 5.8C12.8 4.6 14.2 3.8 15.8 3.8C18.4 3.8 20.5 5.8 20.5 8.5C20.5 14.8 12 20.5 12 20.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
                     </div>
-                    <div class="tour-body">
+                    <a href="{% url 'tour_detail' tour.id %}" class="tour-body">
                         <h3>{{ tour.title }}</h3>
                         <p class="tour-desc">{{ tour.description }}</p>
                         <div class="tour-meta">
@@ -84,7 +86,7 @@
                             <span class="tour-days" data-days="{{ tour.days }}">/ {{ tour.days }} дней</span>
                         </div>
                         <span class="tour-dates">{{ tour.dates }}</span>
-                    </div>
+                    </a>
                 </div>
                 {% empty %}
                 <p>Туры пока не добавлены.</p>

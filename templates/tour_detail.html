@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>На Высоте - Гранд-туры и экскурсии</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container header-block">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                <div class="logo-text">
+                    <p class="logo-title">На Высоте</p>
+                    <p class="logo-subtitle">ТУР - АГЕНТСТВО</p>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="{% url 'catalog' %}">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </nav>
+            <button class="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <hr class="header-line">
+    </header>
+
+    <main>
+        <section class="tour-detail-section">
+            <div class="container">
+                <a href="{% url 'catalog' %}" class="back-btn" aria-label="Назад в каталог">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ECEFEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+
+                <div class="detail-badges">
+                    <p class="badge-gold">4.9</p>
+                    <p class="badge-light">247 отзывов</p>
+                    <p class="badge-light tour-days-badge" data-days="{{ tour.days }}">{{ tour.days }} дня</p>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-image">
+                        <img src="{% static tour.image %}" alt="{{ tour.title }}">
+                    </div>
+
+                    <div class="detail-info">
+                        <h1>{{ tour.title }}</h1>
+                        <p class="detail-desc">{{ tour.description }}</p>
+
+                        <span class="detail-label">Цена за человека от</span>
+                        <div class="detail-price">{{ tour.price }} баллов</div>
+
+                        <span class="detail-label">Доступные даты</span>
+                        <div class="detail-dates">{{ tour.dates }}</div>
+
+                        <button type="button" class="btn-book">Забронировать</button>
+                    </div>
+                </div>
+
+                <div class="detail-guarantees">
+                    <div class="guarantee-item">
+                        <img src="{% static 'img/checkbox.svg' %}" alt="Галочка">
+                        <div>
+                            <h4>Оплата любой картой</h4>
+                            <p>Принимаем российские и международные карты</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <img src="{% static 'img/checkbox.svg' %}" alt="Галочка">
+                        <div>
+                            <h4>Гарантия низкой цены</h4>
+                            <p>Не дороже, чем у организатора на других площадках</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <img src="{% static 'img/checkbox.svg' %}" alt="Галочка">
+                        <div>
+                            <h4>Проверенные тревел-эксперты</h4>
+                            <p>Все организаторы проходят тщательный отбор</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="На Высоте">
+                    <div class="logo-text">
+                        <span class="logo-title">На Высоте</span>
+                        <span class="logo-subtitle">ТУР - АГЕНТСТВО</span>
+                    </div>
+                </a>
+                <p class="footer-desc">Мы создаём путешествия, которые вдохновляют и меняют жизнь.</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЕНЮ</h4>
+                <a href="#">Каталог</a>
+                <a href="#">Профиль</a>
+                <a href="#">Вход</a>
+                <a href="#">Регистрация</a>
+            </div>
+
+            <div class="footer-info">
+                <h4>КОНТАКТЫ</h4>
+                <p>8 (888) 999-73-73</p>
+                <p>pyt@yandex.ru</p>
+                <p>г. Ульяновск, ул. Большой <br> Путь, 28, офис 7</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>МЫ В СОЦСЕТЯХ</h4>
+                <div class="socials">
+                    <a href="#"><img src="{% static 'img/tg.png' %}" alt="Telegram"></a>
+                    <a href="#"><img src="{% static 'img/vk.png' %}" alt="VK"></a>
+                    <a href="#"><img src="{% static 'img/max.png' %}" alt="MAX"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/burger-menu.js' %}"></script>
+    <script src="{% static 'js/catalog.js' %}"></script>
+
+</body>
+</html>
