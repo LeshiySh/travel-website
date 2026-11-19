@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header></header>
+
+    <main class="auth-page" style="background-image: url('{% static 'img/background-auth.png' %}');">
+        <form class="auth-card" method="post">
+            {% csrf_token %}
+            <h1>Регистрация</h1>
+            {% if form.errors %}
+                <div class="auth-error">
+                    {% for field in form %}
+                        {% for err in field.errors %}
+                            <p>{{ err }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="auth-field">
+                <label>ФИО</label>
+                <input type="text" name="full_name" value="{{ form.full_name.value|default:'' }}" placeholder="Фамилия Имя Отчество" required>
+            </div>
+            <div class="auth-field">
+                <label>Логин</label>
+                <input type="text" name="username" value="{{ form.username.value|default:'' }}" placeholder="Введите логин" required>
+            </div>
+            <div class="auth-field">
+                <label>Email</label>
+                <input type="email" name="email" value="{{ form.email.value|default:'' }}" placeholder="Введите почту" required>
+            </div>
+            <div class="auth-field">
+                <label>Телефон</label>
+                <input type="tel" name="phone" value="{{ form.phone.value|default:'' }}" placeholder="Введите номер телефона" required>
+            </div>
+            <div class="auth-field">
+                <label>Пароль</label>
+                <input type="password" name="password" placeholder="Введите пароль" required>
+            </div>
+            <button type="submit" class="auth-submit">Зарегистрироваться</button>
+            <p class="auth-switch">
+                Есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+            </p>
+        </form>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

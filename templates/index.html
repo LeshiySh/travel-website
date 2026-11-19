@@ -21,8 +21,12 @@
             <nav class="nav">
                 <a href="{% url 'catalog' %}">Каталог</a>
                 <a href="#">Профиль</a>
-                <a href="#">Вход</a>
-                <a href="#">Регистрация</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Вход</a>
+                    <a href="{% url 'register' %}">Регистрация</a>
+                {% endif %}
             </nav>
             <button class="burger-btn" aria-label="Меню">
                 <span></span>
